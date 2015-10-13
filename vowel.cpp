@@ -1,0 +1,52 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+	int n,i,c,k[5],j,l;
+	string a;
+	cin>>n;
+	cin>>a;
+	for(i=0;i<5;i++)
+	{
+		k[i]=0;
+	}
+	for(i=0,j=(a.size())-1;i<=j;i++,j--)
+	{
+		if(a[i]=='a'||a[j]=='a')
+		{
+			k[0]=1;
+		}
+		if(a[i]=='e'||a[j]=='e')
+		{
+			k[1]=1;
+		}
+		if(a[i]=='i'||a[j]=='i')
+		{
+			k[2]=1;
+		}
+		if(a[i]=='o'||a[j]=='o')
+		{
+			k[3]=1;
+		}
+		if(a[i]=='u'||a[j]=='u')
+		{
+			k[4]=1;
+		}
+		c=0;
+		for(l=0;l<5;l++)
+		{
+			c+=k[l];
+		}
+		if(c==5)
+		{
+			printf("YES\n");
+			c=6;
+			break;
+		}
+	}
+	if(c!=6)
+	{
+		printf("NO\n");
+	}
+}
